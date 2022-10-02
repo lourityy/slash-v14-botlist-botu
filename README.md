@@ -16,4 +16,4 @@
 > Beğendiyseniz star atmayı unutmayın!
 
 
-PAYLAŞILMASI KESİNLİKLE YASAKTIR!!
+# PAYLAŞILMASI KESİNLİKLE YASAKTIR!!
