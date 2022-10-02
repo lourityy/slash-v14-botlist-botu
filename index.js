@@ -99,7 +99,6 @@ client.on('interactionCreate', async interaction => {
         logg = louritydb.get(`log_${interaction.guild.id}`)
         botRol = louritydb.get(`botRol_${interaction.guild.id}`)
         devRol = louritydb.get(`devRol_${interaction.guild.id}`)
-        adminRol = louritydb.get(`adminRol_${interaction.guild.id}`)
         botekle = louritydb.get(`botekle_${interaction.guild.id}`)
         ayrildiLog = louritydb.get(`ayrildiLog_${interaction.guild.id}`)
 
@@ -132,6 +131,7 @@ client.on('interactionCreate', async interaction => {
                     .setCustomId("reddet")
             )
 
+        adminRol = louritydb.get(`adminRol_${interaction.guild.id}`)
         let a = await client.users.fetch(id);
         let avatar = a.avatar
         let link = "https://cdn.discordapp.com/avatars/" + id + "/" + avatar + ".png?size=1024"
