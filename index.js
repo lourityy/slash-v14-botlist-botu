@@ -95,12 +95,12 @@ client.on('interactionCreate', async interaction => {
     if (interaction.type !== InteractionType.ModalSubmit) return;
     if (interaction.customId === 'form') {
 
-        onay = louritydb.get(`onay_${interaction.guild.id}`)
-        logg = louritydb.get(`log_${interaction.guild.id}`)
-        botRol = louritydb.get(`botRol_${interaction.guild.id}`)
-        devRol = louritydb.get(`devRol_${interaction.guild.id}`)
-        botekle = louritydb.get(`botekle_${interaction.guild.id}`)
-        ayrildiLog = louritydb.get(`ayrildiLog_${interaction.guild.id}`)
+        let onay = louritydb.get(`onay_${interaction.guild.id}`)
+        let logg = louritydb.get(`log_${interaction.guild.id}`)
+        let botRol = louritydb.get(`botRol_${interaction.guild.id}`)
+        let devRol = louritydb.get(`devRol_${interaction.guild.id}`)
+        let botekle = louritydb.get(`botekle_${interaction.guild.id}`)
+        let ayrildiLog = louritydb.get(`ayrildiLog_${interaction.guild.id}`)
 
         if (!onay) return interaction.reply({ content: "Botlist sistemi ayarlanmamış!", ephemeral: true })
         if (!logg) return interaction.reply({ content: "Botlist sistemi ayarlanmamış!", ephemeral: true })
