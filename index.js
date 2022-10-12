@@ -101,6 +101,7 @@ client.on('interactionCreate', async interaction => {
         let devRol = louritydb.get(`devRol_${interaction.guild.id}`)
         let botekle = louritydb.get(`botekle_${interaction.guild.id}`)
         let ayrildiLog = louritydb.get(`ayrildiLog_${interaction.guild.id}`)
+        let adminRol = louritydb.get(`adminRol_${interaction.guild.id}`)
 
         if (!onay) return interaction.reply({ content: "Botlist sistemi ayarlanmamış!", ephemeral: true })
         if (!logg) return interaction.reply({ content: "Botlist sistemi ayarlanmamış!", ephemeral: true })
