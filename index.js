@@ -245,7 +245,7 @@ client.on('interactionCreate', async interaction => {
                     .setCustomId("bot-ekle")
             )
 
-        client.channels.cache.get(botekle).send({ embeds: [menu], components: [row1] })
+        client.channels.cache.get(botekle).send({ embeds: [menu], components: [row1] }).catch(() => { })
     }
 });
 
@@ -280,7 +280,7 @@ client.on('interactionCreate', async interaction => {
         louritydb.delete(`onay_${interaction.guild.id}`)
         louritydb.delete(`botekle_${interaction.guild.id}`)
         louritydb.delete(`ayrildiLog_${interaction.guild.id}`)
-        return interaction.reply({ embeds: [embed1], ephemeral: true })
+        return interaction.reply({ embeds: [embed1], ephemeral: true }).catch(() => { })
     }
 })
 
@@ -340,7 +340,7 @@ client.on('interactionCreate', async interaction => {
 
         interaction.guild.members.unban(lourityData).catch(() => { })
         message.delete()
-        return interaction.reply({ embeds: [embed1], ephemeral: true })
+        return interaction.reply({ embeds: [embed1], ephemeral: true }).catch(() => { })
     }
 
 })
@@ -378,8 +378,13 @@ client.on('interactionCreate', async interaction => {
             .setColor("Red")
         if (!interaction.member.permissions.has(Discord.PermissionsBitField.Flags.ManageChannels)) return interaction.reply({ embeds: [yetki], ephemeral: true });
 
-        interaction.reply({ embeds: [mesaj], ephemeral: true })
+        interaction.reply({ embeds: [mesaj], ephemeral: true }).catch(() => { })
     }
 })
 
 // Lourity Code + Ayarlamalı + Slash Botlist Botu - PAYLAŞILMASI KESİNLİKLE YASAKTIR!!
+
+// Bir Hata Oluştu
+process.on("unhandledRejection", async (error) => {
+    return console.log("Bir hata oluştu! " + error)
+})
